@@ -69,7 +69,7 @@ namespace Oderthingt_1
 		/// <param name="engine">Link with SLAutomation process.</param>
 		public void Run(IEngine engine)
 		{
-			var order = OrderFactory.CreateOrder("Order 1");
+			var order = OrderFactory.CreateOrder("Hihi from the orderline");
 			order.Dispatch("Gerwin van der Kamp");
 		}
 	}
