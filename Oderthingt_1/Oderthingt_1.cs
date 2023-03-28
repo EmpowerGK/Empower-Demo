@@ -49,7 +49,7 @@ dd/mm/2023	1.0.0.1		XXX, Skyline	Initial version
 ****************************************************************************
 */
 
-namespace Empower_1
+namespace Oderthingt_1
 {
 	using System;
 	using System.Collections.Generic;
@@ -57,9 +57,7 @@ namespace Empower_1
 	using System.Text;
 	using Empower.Library.Room2;
 	using Skyline.DataMiner.Automation;
-	using Skyline.DataMiner.Core.DataMinerSystem.Automation;
-	using Skyline.DataMiner.Core.DataMinerSystem.Common;
-
+	
 	/// <summary>
 	/// Represents a DataMiner Automation script.
 	/// </summary>
@@ -71,13 +69,8 @@ namespace Empower_1
 		/// <param name="engine">Link with SLAutomation process.</param>
 		public void Run(IEngine engine)
 		{
-			engine.GenerateInformation("Hello World new test test ");
-			IDms thisDms = engine.GetDms();
-			var elements = thisDms.GetElements();
-			foreach ( var element in elements )
-			{
-				engine.GenerateInformation(element.Name);
-			}
+			var order = OrderFactory.CreateOrder("Order 1");
+			order.Dispatch("Gerwin van der Kamp");
 		}
 	}
 }
